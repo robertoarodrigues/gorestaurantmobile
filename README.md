@@ -1,9 +1,5 @@
 [![HitCount](http://hits.dwyl.com/robertorodrigues/robertoarodrigues/gorestaurantmobile.svg)](http://hits.dwyl.com/robertorodrigues/robertoarodrigues/gorestaurantmobile)
 
-<p align="center">
-  <img src="./src/assets/logo-goRestaurant.jpg" />
-</p>
-
 # GoRestaurant
 Estudo de navegação e filtros no React Native.
 
