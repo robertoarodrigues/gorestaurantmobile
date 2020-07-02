@@ -73,6 +73,7 @@ const FoodDetails: React.FC = () => {
 
   useEffect(() => {
     async function loadFood(): Promise<void> {
+      // Load a specific food with extras based on routeParams id
       const response = await api.get(`foods/${routeParams.id}`);
 
       const foodData = {
@@ -93,6 +94,7 @@ const FoodDetails: React.FC = () => {
   }, [routeParams]);
 
   function handleIncrementExtra(id: number): void {
+    // Increment extra quantity
     setExtras(state => {
       return state.map(extra => {
         if (extra.id === id) {
@@ -108,6 +110,7 @@ const FoodDetails: React.FC = () => {
   }
 
   function handleDecrementExtra(id: number): void {
+    // Decrement extra quantity
     setExtras(state => {
       return state.map(extra => {
         if (extra.id === id && extra.quantity !== 0) {
@@ -169,7 +172,6 @@ const FoodDetails: React.FC = () => {
   );
 
   useLayoutEffect(() => {
-    // Add the favorite icon on the right of the header bar
     navigation.setOptions({
       headerRight: () => (
         <MaterialIcon
@@ -212,7 +214,7 @@ const FoodDetails: React.FC = () => {
               <AdittionalQuantity>
                 <Icon
                   size={15}
-                  color="#6C6C80"
+                  color="#f22"
                   name="minus"
                   onPress={() => handleDecrementExtra(extra.id)}
                   testID={`decrement-extra-${extra.id}`}
@@ -222,7 +224,7 @@ const FoodDetails: React.FC = () => {
                 </AdittionalItemText>
                 <Icon
                   size={15}
-                  color="#6C6C80"
+                  color="#39b100"
                   name="plus"
                   onPress={() => handleIncrementExtra(extra.id)}
                   testID={`increment-extra-${extra.id}`}
@@ -238,7 +240,7 @@ const FoodDetails: React.FC = () => {
             <QuantityContainer>
               <Icon
                 size={15}
-                color="#6C6C80"
+                color="#f22"
                 name="minus"
                 onPress={handleDecrementFood}
                 testID="decrement-food"
@@ -248,7 +250,7 @@ const FoodDetails: React.FC = () => {
               </AdittionalItemText>
               <Icon
                 size={15}
-                color="#6C6C80"
+                color="#39b100"
                 name="plus"
                 onPress={handleIncrementFood}
                 testID="increment-food"
